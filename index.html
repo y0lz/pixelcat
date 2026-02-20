@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Cat Expander - Incremental</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Sidebar с ресурсами и прокачками -->
+        <div class="sidebar">
+            <h1>🐱 PIXEL CAT<br>EXPANDER</h1>
+            
+            <div class="resources">
+                <h2>▼ RESOURCES</h2>
+                <div class="resource-item" id="dirt-resource" style="border-color: #8B4513;">
+                    <div class="resource-name">
+                        <div class="resource-icon" style="background: #8B4513;"></div>
+                        <span>DIRT</span>
+                    </div>
+                    <div>
+                        <span class="resource-amount" id="dirt-amount">0</span>
+                        <span class="resource-rate" id="dirt-rate"></span>
+                    </div>
+                </div>
+                <div class="resource-item" id="grass-resource" style="border-color: #228B22;">
+                    <div class="resource-name">
+                        <div class="resource-icon" style="background: #228B22;"></div>
+                        <span>GRASS</span>
+                    </div>
+                    <div>
+                        <span class="resource-amount" id="grass-amount">0</span>
+                        <span class="resource-rate" id="grass-rate"></span>
+                    </div>
+                </div>
+                <div class="resource-item" id="wood-resource" style="border-color: #D2691E;">
+                    <div class="resource-name">
+                        <div class="resource-icon" style="background: #D2691E;"></div>
+                        <span>WOOD</span>
+                    </div>
+                    <div>
+                        <span class="resource-amount" id="wood-amount">0</span>
+                        <span class="resource-rate" id="wood-rate"></span>
+                    </div>
+                </div>
+                <div class="resource-item" id="stone-resource" style="border-color: #808080;">
+                    <div class="resource-name">
+                        <div class="resource-icon" style="background: #808080;"></div>
+                        <span>STONE</span>
+                    </div>
+                    <div>
+                        <span class="resource-amount" id="stone-amount">0</span>
+                        <span class="resource-rate" id="stone-rate"></span>
+                    </div>
+                </div>
+                <div class="resource-item" id="metal-resource" style="border-color: #C0C0C0;">
+                    <div class="resource-name">
+                        <div class="resource-icon" style="background: #C0C0C0;"></div>
+                        <span>METAL</span>
+                    </div>
+                    <div>
+                        <span class="resource-amount" id="metal-amount">0</span>
+                        <span class="resource-rate" id="metal-rate"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="upgrades">
+                <!-- Земля -->
+                <div class="upgrade-section" id="dirt-upgrades">
+                    <h3>
+                        <div class="resource-icon" style="background: #8B4513;"></div>
+                        DIRT MINING
+                    </h3>
+                    <div class="material-info">4 земли = 1 трава<br>8 травы = 1 дерево<br>12 дерева = 1 камень<br>16 камня = 1 металл</div>
+                    <button class="upgrade-btn" id="dirt-click-upgrade">
+                        <div class="upgrade-info">
+                            <span>CLICK +1</span>
+                            <span class="upgrade-cost">DIRT: <span id="dirt-click-cost">10</span></span>
+                        </div>
+                        <div class="upgrade-level">LVL:<span id="dirt-click-level">1</span> PWR:<span id="dirt-click-power">1</span></div>
+                    </button>
+                    <button class="upgrade-btn" id="dirt-auto-upgrade">
+                        <div class="upgrade-info">
+                            <span>AUTO +0.3/s</span>
+                            <span class="upgrade-cost">DIRT: <span id="dirt-auto-cost">50</span></span>
+                        </div>
+                        <div class="upgrade-level">LVL:<span id="dirt-auto-level">0</span> +<span id="dirt-auto-power">0</span>/s</div>
+                    </button>
+                </div>
+
+                <!-- Трава -->
+                <div class="upgrade-section" id="grass-upgrades">
+                    <h3>
+                        <div class="resource-icon" style="background: #228B22;"></div>
+                        GRASS UPGRADES
+                    </h3>
+                    <div class="material-info">Улучшает добычу ЗЕМЛИ!</div>
+                    <button class="upgrade-btn" id="grass-click-upgrade">
+                        <div class="upgrade-info">
+                            <span>DIRT +3 PWR</span>
+                            <span class="upgrade-cost">GRASS: <span id="grass-click-cost">15</span></span>
+                        </div>
+                        <div class="upgrade-level">Куплено: <span id="grass-click-level">0</span></div>
+                    </button>
+                    <button class="upgrade-btn" id="grass-auto-upgrade">
+                        <div class="upgrade-info">
+                            <span>DIRT +1.5/s</span>
+                            <span class="upgrade-cost">GRASS: <span id="grass-auto-cost">75</span></span>
+                        </div>
+                        <div class="upgrade-level">Куплено: <span id="grass-auto-level">0</span></div>
+                    </button>
+                </div>
+
+                <!-- Дерево -->
+                <div class="upgrade-section" id="wood-upgrades">
+                    <h3>
+                        <div class="resource-icon" style="background: #D2691E;"></div>
+                        WOOD UPGRADES
+                    </h3>
+                    <div class="material-info">Улучшает добычу ЗЕМЛИ!</div>
+                    <button class="upgrade-btn" id="wood-click-upgrade">
+                        <div class="upgrade-info">
+                            <span>DIRT +15 PWR</span>
+                            <span class="upgrade-cost">WOOD: <span id="wood-click-cost">20</span></span>
+                        </div>
+                        <div class="upgrade-level">Куплено: <span id="wood-click-level">0</span></div>
+                    </button>
+                    <button class="upgrade-btn" id="wood-auto-upgrade">
+                        <div class="upgrade-info">
+                            <span>DIRT +7/s</span>
+                            <span class="upgrade-cost">WOOD: <span id="wood-auto-cost">100</span></span>
+                        </div>
+                        <div class="upgrade-level">Куплено: <span id="wood-auto-level">0</span></div>
+                    </button>
+                </div>
+
+                <!-- Камень -->
+                <div class="upgrade-section" id="stone-upgrades">
+                    <h3>
+                        <div class="resource-icon" style="background: #808080;"></div>
+                        STONE UPGRADES
+                    </h3>
+                    <div class="material-info">Улучшает добычу ЗЕМЛИ!</div>
+                    <button class="upgrade-btn" id="stone-click-upgrade">
+                        <div class="upgrade-info">
+                            <span>DIRT +75 PWR</span>
+                            <span class="upgrade-cost">STONE: <span id="stone-click-cost">30</span></span>
+                        </div>
+                        <div class="upgrade-level">Куплено: <span id="stone-click-level">0</span></div>
+                    </button>
+                    <button class="upgrade-btn" id="stone-auto-upgrade">
+                        <div class="upgrade-info">
+                            <span>DIRT +35/s</span>
+                            <span class="upgrade-cost">STONE: <span id="stone-auto-cost">150</span></span>
+                        </div>
+                        <div class="upgrade-level">Куплено: <span id="stone-auto-level">0</span></div>
+                    </button>
+                </div>
+
+                <!-- Металл -->
+                <div class="upgrade-section" id="metal-upgrades">
+                    <h3>
+                        <div class="resource-icon" style="background: #C0C0C0;"></div>
+                        METAL UPGRADES
+                    </h3>
+                    <div class="material-info">Улучшает добычу ЗЕМЛИ!</div>
+                    <button class="upgrade-btn" id="metal-click-upgrade">
+                        <div class="upgrade-info">
+                            <span>DIRT +400 PWR</span>
+                            <span class="upgrade-cost">METAL: <span id="metal-click-cost">50</span></span>
+                        </div>
+                        <div class="upgrade-level">Куплено: <span id="metal-click-level">0</span></div>
+                    </button>
+                    <button class="upgrade-btn" id="metal-auto-upgrade">
+                        <div class="upgrade-info">
+                            <span>DIRT +200/s</span>
+                            <span class="upgrade-cost">METAL: <span id="metal-auto-cost">250</span></span>
+                        </div>
+                        <div class="upgrade-level">Куплено: <span id="metal-auto-level">0</span></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Основная игровая область -->
+        <div class="main-area">
+            <div class="level-info">
+                <div class="level-title">
+                    <span style="font-size: 12px;">LEVEL</span>
+                    <span id="level-name" style="font-size: 16px; color: #FFD700;">Beginner's Heart</span>
+                </div>
+                <div id="level-description" style="font-size: 8px; color: #888; margin-top: 4px;">Start your journey with a simple heart</div>
+            </div>
+
+            <div class="stats">
+                <div class="stats-title">CURRENT LAYER</div>
+                <div class="stats-value" id="current-material">DIRT LAYER</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="material-progress" style="width: 0%"></div>
+                </div>
+                <div class="stats-title" style="margin-top: 8px; font-size: 8px;">
+                    <span id="current-pixel-progress">0</span>/<span id="current-pixel-required">4</span> CLICKS
+                </div>
+            </div>
+
+            <div class="pixel-canvas-container">
+                <div class="pixel-canvas" id="pixel-canvas"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключаем все модули -->
+    <script src="js/gameState.js"></script>
+    <script src="js/levels.js"></script>
+    <script src="js/resources.js"></script>
+    <script src="js/grid.js"></script>
+    <script src="js/clicks.js"></script>
+    <script src="js/effects.js"></script>
+    <script src="js/upgrades.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/save.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
