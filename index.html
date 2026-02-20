@@ -73,20 +73,19 @@
                         <div class="resource-icon" style="background: #8B4513;"></div>
                         DIRT MINING
                     </h3>
-                    <div class="material-info">4 земли = 1 трава<br>8 травы = 1 дерево<br>12 дерева = 1 камень<br>16 камня = 1 металл</div>
                     <button class="upgrade-btn" id="dirt-click-upgrade">
                         <div class="upgrade-info">
-                            <span>CLICK +1</span>
-                            <span class="upgrade-cost">DIRT: <span id="dirt-click-cost">10</span></span>
+                            <span>CLICK +<span id="dirt-click-bonus">1</span></span>
+                            <span class="upgrade-cost"><span id="dirt-click-cost">10</span> 🟤</span>
                         </div>
-                        <div class="upgrade-level">LVL:<span id="dirt-click-level">1</span> PWR:<span id="dirt-click-power">1</span></div>
+                        <div class="upgrade-level">LVL <span id="dirt-click-level">1</span> | PWR <span id="dirt-click-power">1</span></div>
                     </button>
                     <button class="upgrade-btn" id="dirt-auto-upgrade">
                         <div class="upgrade-info">
-                            <span>AUTO +0.3/s</span>
-                            <span class="upgrade-cost">DIRT: <span id="dirt-auto-cost">50</span></span>
+                            <span>AUTO +<span id="dirt-auto-bonus">0.5</span>/s</span>
+                            <span class="upgrade-cost"><span id="dirt-auto-cost">50</span> 🟤</span>
                         </div>
-                        <div class="upgrade-level">LVL:<span id="dirt-auto-level">0</span> +<span id="dirt-auto-power">0</span>/s</div>
+                        <div class="upgrade-level">LVL <span id="dirt-auto-level">0</span> | +<span id="dirt-auto-power">0</span>/s</div>
                     </button>
                 </div>
 
@@ -94,22 +93,21 @@
                 <div class="upgrade-section" id="grass-upgrades">
                     <h3>
                         <div class="resource-icon" style="background: #228B22;"></div>
-                        GRASS UPGRADES
+                        GRASS → DIRT
                     </h3>
-                    <div class="material-info">Улучшает добычу ЗЕМЛИ!</div>
                     <button class="upgrade-btn" id="grass-click-upgrade">
                         <div class="upgrade-info">
-                            <span>DIRT +3 PWR</span>
-                            <span class="upgrade-cost">GRASS: <span id="grass-click-cost">15</span></span>
+                            <span>DIRT +<span id="grass-click-bonus">5</span></span>
+                            <span class="upgrade-cost"><span id="grass-click-cost">15</span> 🟢</span>
                         </div>
-                        <div class="upgrade-level">Куплено: <span id="grass-click-level">0</span></div>
+                        <div class="upgrade-level">LVL <span id="grass-click-level">0</span></div>
                     </button>
                     <button class="upgrade-btn" id="grass-auto-upgrade">
                         <div class="upgrade-info">
-                            <span>DIRT +1.5/s</span>
-                            <span class="upgrade-cost">GRASS: <span id="grass-auto-cost">75</span></span>
+                            <span>DIRT +<span id="grass-auto-bonus">2</span>/s</span>
+                            <span class="upgrade-cost"><span id="grass-auto-cost">75</span> 🟢</span>
                         </div>
-                        <div class="upgrade-level">Куплено: <span id="grass-auto-level">0</span></div>
+                        <div class="upgrade-level">LVL <span id="grass-auto-level">0</span></div>
                     </button>
                 </div>
 
@@ -117,22 +115,21 @@
                 <div class="upgrade-section" id="wood-upgrades">
                     <h3>
                         <div class="resource-icon" style="background: #D2691E;"></div>
-                        WOOD UPGRADES
+                        WOOD → DIRT
                     </h3>
-                    <div class="material-info">Улучшает добычу ЗЕМЛИ!</div>
                     <button class="upgrade-btn" id="wood-click-upgrade">
                         <div class="upgrade-info">
-                            <span>DIRT +15 PWR</span>
-                            <span class="upgrade-cost">WOOD: <span id="wood-click-cost">20</span></span>
+                            <span>DIRT +<span id="wood-click-bonus">25</span></span>
+                            <span class="upgrade-cost"><span id="wood-click-cost">20</span> 🟫</span>
                         </div>
-                        <div class="upgrade-level">Куплено: <span id="wood-click-level">0</span></div>
+                        <div class="upgrade-level">LVL <span id="wood-click-level">0</span></div>
                     </button>
                     <button class="upgrade-btn" id="wood-auto-upgrade">
                         <div class="upgrade-info">
-                            <span>DIRT +7/s</span>
-                            <span class="upgrade-cost">WOOD: <span id="wood-auto-cost">100</span></span>
+                            <span>DIRT +<span id="wood-auto-bonus">10</span>/s</span>
+                            <span class="upgrade-cost"><span id="wood-auto-cost">100</span> 🟫</span>
                         </div>
-                        <div class="upgrade-level">Куплено: <span id="wood-auto-level">0</span></div>
+                        <div class="upgrade-level">LVL <span id="wood-auto-level">0</span></div>
                     </button>
                 </div>
 
@@ -140,22 +137,21 @@
                 <div class="upgrade-section" id="stone-upgrades">
                     <h3>
                         <div class="resource-icon" style="background: #808080;"></div>
-                        STONE UPGRADES
+                        STONE → DIRT
                     </h3>
-                    <div class="material-info">Улучшает добычу ЗЕМЛИ!</div>
                     <button class="upgrade-btn" id="stone-click-upgrade">
                         <div class="upgrade-info">
-                            <span>DIRT +75 PWR</span>
-                            <span class="upgrade-cost">STONE: <span id="stone-click-cost">30</span></span>
+                            <span>DIRT +<span id="stone-click-bonus">125</span></span>
+                            <span class="upgrade-cost"><span id="stone-click-cost">30</span> ⚫</span>
                         </div>
-                        <div class="upgrade-level">Куплено: <span id="stone-click-level">0</span></div>
+                        <div class="upgrade-level">LVL <span id="stone-click-level">0</span></div>
                     </button>
                     <button class="upgrade-btn" id="stone-auto-upgrade">
                         <div class="upgrade-info">
-                            <span>DIRT +35/s</span>
-                            <span class="upgrade-cost">STONE: <span id="stone-auto-cost">150</span></span>
+                            <span>DIRT +<span id="stone-auto-bonus">50</span>/s</span>
+                            <span class="upgrade-cost"><span id="stone-auto-cost">150</span> ⚫</span>
                         </div>
-                        <div class="upgrade-level">Куплено: <span id="stone-auto-level">0</span></div>
+                        <div class="upgrade-level">LVL <span id="stone-auto-level">0</span></div>
                     </button>
                 </div>
 
@@ -163,22 +159,21 @@
                 <div class="upgrade-section" id="metal-upgrades">
                     <h3>
                         <div class="resource-icon" style="background: #C0C0C0;"></div>
-                        METAL UPGRADES
+                        METAL → DIRT
                     </h3>
-                    <div class="material-info">Улучшает добычу ЗЕМЛИ!</div>
                     <button class="upgrade-btn" id="metal-click-upgrade">
                         <div class="upgrade-info">
-                            <span>DIRT +400 PWR</span>
-                            <span class="upgrade-cost">METAL: <span id="metal-click-cost">50</span></span>
+                            <span>DIRT +<span id="metal-click-bonus">625</span></span>
+                            <span class="upgrade-cost"><span id="metal-click-cost">50</span> ⚪</span>
                         </div>
-                        <div class="upgrade-level">Куплено: <span id="metal-click-level">0</span></div>
+                        <div class="upgrade-level">LVL <span id="metal-click-level">0</span></div>
                     </button>
                     <button class="upgrade-btn" id="metal-auto-upgrade">
                         <div class="upgrade-info">
-                            <span>DIRT +200/s</span>
-                            <span class="upgrade-cost">METAL: <span id="metal-auto-cost">250</span></span>
+                            <span>DIRT +<span id="metal-auto-bonus">250</span>/s</span>
+                            <span class="upgrade-cost"><span id="metal-auto-cost">250</span> ⚪</span>
                         </div>
-                        <div class="upgrade-level">Куплено: <span id="metal-auto-level">0</span></div>
+                        <div class="upgrade-level">LVL <span id="metal-auto-level">0</span></div>
                     </button>
                 </div>
             </div>
